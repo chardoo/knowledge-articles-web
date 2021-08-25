@@ -1,0 +1,39 @@
+     
+ <div class="articles-details">
+     <div class="example-container mat-elevation-z8">
+         <div class="example-loading-shade" *ngIf="isLoadingResults">
+             <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+         </div>
+         <div class="button-row ">
+             <a mat-flat-button class="primarycolor" [routerLink]="['/articles']">
+                 all Article
+             </a>
+         </div>
+         <mat-card *ngFor="let article of article" class="example-card">
+             <mat-card-header>
+                 <mat-card-title>
+                     <h2>{{article.intentId}}</h2>
+                 </mat-card-title>
+                 <mat-card-subtitle>
+                     {{article.summary}}
+                 </mat-card-subtitle>
+             </mat-card-header>
+             <mat-card-content>
+                 <dl>
+                     <dt>Article Detail:</dt>
+                     <dd>{{article.description}}</dd>
+     
+                 </dl>
+             </mat-card-content>
+             <mat-card-actions>
+                 <a mat-flat-button class="primarycolor" [routerLink]="['/article-edit', article.articleId]">
+                     <mat-icon>edit</mat-icon>
+                 </a>
+                 <a mat-flat-button color="warn" (click)="deleteArticle(article._id)">
+                     <mat-icon>delete</mat-icon>
+                 </a>
+             </mat-card-actions>
+         </mat-card>
+     </div>
+
+</div>

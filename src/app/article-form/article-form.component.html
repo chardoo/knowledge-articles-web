@@ -1,0 +1,70 @@
+<div  class="example-container articleformclass mat-elevation-z8">
+    <div class="example-loading-shade" *ngIf="isLoadingResults">
+        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+        <a mat-flat-button class="primarycolor" [routerLink]="['/articles']">
+            all Article
+        </a>
+    </div>
+    <mat-card class="example-card">
+        <form [formGroup]="articleForm" (ngSubmit)="onFormSubmit()">
+            
+            <mat-form-field class="example-full-width">
+                <mat-label>Article Id</mat-label>
+                <input matInput placeholder="article ID" formControlName="articleId" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!articleForm.get('articleId').valid && articleForm.get('articleId').touched">Please article ID</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Intent ID" formControlName="intentId" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!articleForm.get('intentId').valid && articleForm.get('intentId').touched">Please intent ID</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput  placeholder="Summary" formControlName="summary" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!articleForm.get('summary').valid && articleForm.get('summary').touched">Please enter Article Summary</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              
+                <textarea matInput placeholder="Describe the article"  formControlName="description" [errorStateMatcher]="matcher">  </textarea>
+                <mat-error>
+                    <span *ngIf="!articleForm.get('description').valid && articleForm.get('description').touched">Please enter Article detail</span>
+                </mat-error>
+            </mat-form-field>
+            <div class="button-row ">
+                <button class="primarycolor" type="submit" [disabled]="!articleForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+            </div>
+        </form>
+    </mat-card>
+</div>
+
+
+
+    
+<!--        
+        <form [formGroup]="articleForm" (ngSubmit)="onFormSubmit()">
+            <div class="form-group">
+                <input class="fadeIn second" placeholder="Article ID" formControlName="articleId" >
+                <span *ngIf="!articleForm.get('articleId').valid && articleForm.get('articleId').touched">Please enter article ID</span>
+            </div>
+            <div class="form-group">
+                 <input class="fadeIn third" placeholder="Intent ID" formControlName="intentId" >
+                 <span *ngIf="!articleForm.get('intentId').valid && articleForm.get('intentId').touched">Please enter intent ID</span>
+            </div>
+            <div class="form-group">
+               <input class="fadeIn third" placeholder="Summary" formControlName="summary" >
+               <span *ngIf="!articleForm.get('summary').valid && articleForm.get('summary').touched">Please enter Article Summary</span>
+            </div>
+            <div class="form-group">
+                <textarea name="description" formControlName="description">Enter article description her</textarea>
+                <span *ngIf="!articleForm.get('description').valid && articleForm.get('description').touched">Please enter Article detail</span>
+            </div>
+            <button type="submit" [disabled]="!articleForm.valid">  Save </button>
+        </form>
+         -->
+    

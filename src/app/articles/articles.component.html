@@ -1,0 +1,27 @@
+
+
+<div class="articles">
+<div class="container">
+    <a mat-flat-button class="primarycolor" [routerLink]="['/article-add']">
+        <mat-icon>add</mat-icon>
+    </a>
+    <table class="ui celled table">
+        <thead>
+            <tr>
+                <th>articleId</th>
+                <th>intentId</th>
+                <th>Summary</th>
+                <th>Detail</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let data of data">
+            <td>{{ data.articleId }}</td>
+            <td>{{ data.intentId }}</td>
+            <td>{{ data.summary }}</td>
+            <td >  <a  class="priColr"  [routerLink]="['/article-details/', data.articleId]"> More Info </a> </td>  
+        </tr>
+    </table>
+    
+
+</div>
+</div>

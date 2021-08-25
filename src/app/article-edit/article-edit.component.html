@@ -1,0 +1,51 @@
+<div class="example-container articleEditclass mat-elevation-z8">
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+      <a mat-flat-button color="primary" (click)="articleDetails()">Details</a>
+    </div>
+    <mat-card class="example-card">
+      <form [formGroup]="articleForm" (ngSubmit)="onFormSubmit()">
+        
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="article Id" formControlName="articleId"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!articleForm.get('articleId').valid && articleForm.get('articleId').touched">Please enter article Id</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="intent Id" formControlName="intentId"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!articleForm.get('intentId').valid && articleForm.get('intentId').touched">Please enter intnet Id</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Summary" formControlName="summary"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!articleForm.get('summary').valid && articleForm.get('summary').touched">Please enter article summary</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <!-- <input matInput placeholder="Summary" formControlName="description"
+                   [errorStateMatcher]="matcher"> -->
+                   <textarea matInput placeholder=" Description the article " formControlName="description" [errorStateMatcher]="matcher"></textarea>
+            <mat-error>
+              <span *ngIf="!articleForm.get('description').valid && articleForm.get('description').touched">Please enter article Description</span>
+            </mat-error>
+          </mat-form-field>
+
+        <div class="button-row">
+          <button type="submit" [disabled]="!articleForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+  
