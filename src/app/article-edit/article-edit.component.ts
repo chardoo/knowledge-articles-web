@@ -74,7 +74,7 @@ export class ArticleEditComponent implements OnInit {
 
 
   articleDetails() {
-    this.router.navigate(['/article-details/', this._id]);
+    this.router.navigate(['/article-details/', this.articleId]);
   }
 
 }
