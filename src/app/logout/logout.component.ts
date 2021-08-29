@@ -17,7 +17,7 @@ export class LogoutComponent implements OnInit {
   
   logout(): boolean {
     if(this.authService.logout()){
-    this.router.navigate(['/'])
+    this.router.navigate(['/login'])
     }
     return false;
     }
