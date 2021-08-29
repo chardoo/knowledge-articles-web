@@ -1,6 +1,10 @@
      
  <div class="articles-details">
      <div class="example-container ">
+         <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
          <div class="example-loading-shade spincolor" *ngIf="isLoadingResults">
              <mat-spinner class="" *ngIf="isLoadingResults"></mat-spinner>
          </div>
