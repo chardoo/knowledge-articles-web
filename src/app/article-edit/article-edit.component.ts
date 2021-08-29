@@ -20,6 +20,7 @@ export class ArticleEditComponent implements OnInit {
   
   articleForm: FormGroup;
   _id = '';
+  myid = '';
   articleId = '';
   intentId = '';
   summary = '' ;
@@ -40,11 +41,10 @@ export class ArticleEditComponent implements OnInit {
 
   getArticle(id:any){
     this.api.getArticle(id).subscribe((data: any) => {
-     
-      // console.log(data);
       for(data of data){
+        this.myid = data.articleId
         this._id = data._id;
-      this.articleForm.setValue({
+        this.articleForm.setValue({
         articleId: data.articleId,
         intentId: data.intentId,
         summary: data.summary,
@@ -74,7 +74,7 @@ export class ArticleEditComponent implements OnInit {
 
 
   articleDetails() {
-    this.router.navigate(['/article-details/', this._id]);
+    this.router.navigate(['/article-details/', this.articleId]);
   }
 
 }

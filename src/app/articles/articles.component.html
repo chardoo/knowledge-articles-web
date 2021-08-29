@@ -5,6 +5,7 @@
     <a mat-flat-button class="primarycolor" [routerLink]="['/article-add']">
         <mat-icon>add</mat-icon>
     </a>
+    
     <table class="ui celled table">
         <thead>
             <tr>
@@ -14,6 +15,10 @@
                 <th>Detail</th>
             </tr>
         </thead>
+        <div class="example-loading-shade priColr"
+              *ngIf="isLoadingResults">
+           <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+        </div>
         <tr *ngFor="let data of data">
             <td>{{ data.articleId }}</td>
             <td>{{ data.intentId }}</td>

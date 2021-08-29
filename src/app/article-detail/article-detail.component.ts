@@ -26,9 +26,6 @@ export class ArticleDetailComponent implements OnInit {
     this.api.getArticle(id)
       .subscribe((data: any) => {
         this.article = data;
-        // console.log('hello man')
-        // console.log(data)
-        // console.log(this.article);
         this.isLoadingResults = false;
       });
 

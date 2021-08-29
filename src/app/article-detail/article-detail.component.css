@@ -7,6 +7,9 @@
 .primarycolor{
     background-color: rgb(248, 195, 61);
 }
+.spincolor{
+  color: rgb(248, 195, 61);
+}
 /* Structure */
 .example-container {
     position: relative;
@@ -30,3 +33,6 @@
     margin: 5px;
   }
   
+  .myCardHeader{
+     margin-left: 0% !important;
+}

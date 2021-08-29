@@ -1,4 +1,4 @@
-<div  class="example-container articleformclass mat-elevation-z8">
+<div  class="example-container articleformclass ">
     <div class="example-loading-shade" *ngIf="isLoadingResults">
         <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
     </div>
@@ -6,6 +6,7 @@
         <a mat-flat-button class="primarycolor" [routerLink]="['/articles']">
             all Article
         </a>
+        <h4> Add Article</h4>
     </div>
     <mat-card class="example-card">
         <form [formGroup]="articleForm" (ngSubmit)="onFormSubmit()">

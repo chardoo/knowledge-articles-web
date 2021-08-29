@@ -9,15 +9,15 @@ import {LoggedInGuard} from './logged-in.guard'
 const routes: Routes = [
   
 
-  { path: '',
+  { path: 'login',
     component:CLoginComponent,
     data: { title: 'Login' },
   },
 
-  // { path: '',
-  //   redirectTo: '/login',
-  //   pathMatch: 'full'
-  //  },
+  { path: '',
+    redirectTo:'/articles',
+    pathMatch:'full'
+   },
 
   {
      path: 'articles',
