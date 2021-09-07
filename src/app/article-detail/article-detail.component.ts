@@ -9,9 +9,7 @@ import { ArticleService } from '../article.service';
 })
 
 
-export class ArticleDetailComponent implements OnInit {
- 
-  // article : Article  = { _id: '', articleId:'', intentId: '', summary: '', description: '', createdAt:'', updatedAt:''}
+export class ArticleDetailComponent implements OnInit { 
   article :Article[] = []
   isLoadingResults = true;
 
@@ -28,10 +26,9 @@ export class ArticleDetailComponent implements OnInit {
         this.article = data;
         this.isLoadingResults = false;
       });
-
-     
   }
 
+  
   deleteArticle(id: any) {
     this.isLoadingResults = true;
     this.api.deleteArticle(id)

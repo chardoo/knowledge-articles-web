@@ -59,7 +59,6 @@ export class ArticleEditComponent implements OnInit {
     this.isLoadingResults = true;
     this.api.updateArticle(this._id, this.articleForm.value)
       .subscribe((res: any) => {
-        
           const id = res.articleId;
           this.isLoadingResults = false;
           this.router.navigate(['/articles']);
@@ -73,8 +72,6 @@ export class ArticleEditComponent implements OnInit {
 
 
   articleDetails() {
-    // console.log(this.articleId)
-    console.log('man is clicked')
     this.router.navigate(['/article-details/', this.myid]);
   }
 

@@ -1,35 +1,58 @@
 
 
-<div class="articles">
-<div class="container">
+<div class="example-container  articles">
+    
+        <a mat-flat-button class="primarycolor" [routerLink]="['/article-add']">
+            <mat-icon>add</mat-icon>
+        </a>
+       
+        <table class="table table-hover table-sm  ">
+            <thead>
+                <tr class="table-dark">
+                    <th>articleId</th>
+                    <th>intentId</th>
+                    <th>Summary</th>
+                    <th>Detail</th>
+                </tr>
+            </thead>
+            <div class="example-loading-shade priColr"
+                  *ngIf="isLoadingResults">
+               <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+            </div>
+            <tr *ngFor="let data of data">
+                <td>{{ data.articleId }}</td>
+                <td>{{ data.intentId }}</td>
+                <td>{{ data.summary }}</td>
+                <td> <a class="priColr"  [routerLink]="['/article-details/', data.articleId]"> More Info </a> </td>  
+            </tr>
+        </table>
+    
+</div> 
+
+<!-- 
+<div class="example-container  articles"> 
     <a mat-flat-button class="primarycolor" [routerLink]="['/article-add']">
         <mat-icon>add</mat-icon>
     </a>
-   
-    <!-- <input class="searchInput" type="text" name="searchTerm" placeholder="Search for an Article" [ngModel]="searchTerm"
-     (input)= "handleSearchKeyInput($event.target.value)" /> -->
-     <!-- <input type="text" [(ngModel)]="handleSearchKeyInput($event.target.value)" class="searchTerm" placeholder="What are you looking for?"> -->
-    <table class="ui celled table">
+    <table class="table table-hover">
         <thead>
-            <tr>
-                <th>articleId</th>
-                <th>intentId</th>
-                <th>Summary</th>
-                <th>Detail</th>
-            </tr>
+          <tr>
+            <th scope="col">articleId</th>
+            <th scope="col">intentId</th>
+            <th scope="col">Summary</th>
+            <th scope="col">Detail</th>
+          </tr>
         </thead>
-        <div class="example-loading-shade priColr"
-              *ngIf="isLoadingResults">
-           <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
-        </div>
-        <tr *ngFor="let data of data">
-            <td>{{ data.articleId }}</td>
+        <tbody>
+          <tr *ngFor="let data of data">
+            <td scope="col">{{ data.articleId }}</td>
             <td>{{ data.intentId }}</td>
             <td>{{ data.summary }}</td>
-            <td >  <a  class="priColr"  [routerLink]="['/article-details/', data.articleId]"> More Info </a> </td>  
-        </tr>
-    </table>
+            <td> <a class="priColr"  [routerLink]="['/article-details/', data.articleId]"> More Info </a> </td>  
+               
+          </tr>
+         
+        </tbody>
+      </table>
     
-
-</div>
-</div>
+</div> -->
