@@ -23,6 +23,9 @@
      border-radius: 10px;
 }
 
+.primarycolori{
+  background-color: rgb(17, 13, 3);
+}
 
 .articleformclass{
     margin-top: 15vh;
