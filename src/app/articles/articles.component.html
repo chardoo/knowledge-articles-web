@@ -6,6 +6,9 @@
             <mat-icon>add</mat-icon>
         </a>
        
+       
+
+
         <table class="table table-hover table-sm  ">
             <thead>
                 <tr class="table-dark">
@@ -23,7 +26,7 @@
                 <td>{{ data.articleId }}</td>
                 <td>{{ data.intentId }}</td>
                 <td>{{ data.summary }}</td>
-                <td> <a class="priColr"  [routerLink]="['/article-details/', data.articleId]"> More Info </a> </td>  
+                <td> <a class="priColr"  [routerLink]="['/article-details/', data.articleId]">  <mat-icon>info</mat-icon> </a> </td>  
             </tr>
         </table>
     
