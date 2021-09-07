@@ -53,14 +53,13 @@ export class ArticleEditComponent implements OnInit {
       });
     }
     });
-
   }
 
   onFormSubmit() {
     this.isLoadingResults = true;
     this.api.updateArticle(this._id, this.articleForm.value)
       .subscribe((res: any) => {
-        // console.log(res)
+        
           const id = res.articleId;
           this.isLoadingResults = false;
           this.router.navigate(['/articles']);
@@ -74,7 +73,9 @@ export class ArticleEditComponent implements OnInit {
 
 
   articleDetails() {
-    this.router.navigate(['/article-details/', this.articleId]);
+    // console.log(this.articleId)
+    console.log('man is clicked')
+    this.router.navigate(['/article-details/', this.myid]);
   }
 
 }

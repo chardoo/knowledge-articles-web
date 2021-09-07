@@ -5,7 +5,10 @@
     <a mat-flat-button class="primarycolor" [routerLink]="['/article-add']">
         <mat-icon>add</mat-icon>
     </a>
-    
+   
+    <!-- <input class="searchInput" type="text" name="searchTerm" placeholder="Search for an Article" [ngModel]="searchTerm"
+     (input)= "handleSearchKeyInput($event.target.value)" /> -->
+     <!-- <input type="text" [(ngModel)]="handleSearchKeyInput($event.target.value)" class="searchTerm" placeholder="What are you looking for?"> -->
     <table class="ui celled table">
         <thead>
             <tr>

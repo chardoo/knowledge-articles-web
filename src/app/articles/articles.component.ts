@@ -8,6 +8,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
   styleUrls: ['./articles.component.css']
 })
 export class ArticlesComponent implements OnInit {
+  searchTerm: string;  
   displayedColumns: string[] = ['intentId', 'summary', 'detail'];
   data: Article[] = [];
   isLoadingResults = true;
@@ -29,6 +30,14 @@ export class ArticlesComponent implements OnInit {
     });
 
 
+  }
+
+  handleSearchKeyInput(event){
+    const searchKey = event.target.value.toLowerCase();
+    this.data.filter(article =>
+       article.articleId.toLocaleLowerCase().includes(searchKey)
+    
+    )
   }
 
 }
